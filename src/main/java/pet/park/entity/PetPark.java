@@ -24,7 +24,7 @@ public class PetPark {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long petParkId;
 	private String parkName;
-	private String  direction;
+	private String directions;
 	private String stateOrProvince;
 	private String county;
 
@@ -40,7 +40,7 @@ public class PetPark {
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	@ManyToMany(cascade = CascadeType.PERSIST)
-	@JoinTable(name = "pet_park_amentity",
+	@JoinTable(name = "pet_park_amenity",
 	joinColumns = @JoinColumn(name = "pet_park_id"),
 	inverseJoinColumns =@JoinColumn(name = "amenity_id"))
 	private Set<Amenity> amenities =  new HashSet<>();
